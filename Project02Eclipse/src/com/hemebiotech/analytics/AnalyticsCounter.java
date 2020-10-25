@@ -1,8 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-
 public class AnalyticsCounter {
 
     /*
@@ -15,19 +12,8 @@ public class AnalyticsCounter {
 	String filePath = args[0];
 	String out = args[1];
 
-	BufferedReader reader = new BufferedReader(new FileReader(filePath));
-	String line = reader.readLine();
-
-	// FIXME 7 : Externalisé vers la classe ReadSymptomDataFromFile
-	while (line != null) {
-	    // FIXME 6 : Réglé par le FIXME 1
-	    System.out.println("symptom from file: " + line);
-
-	    line = reader.readLine();
-
-	}
-
-	reader.close();
+	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
+	System.out.println(reader.GetSymptoms());
 
 	// FIXME 8 Externalisé vers la classe WriteSymptomDataToFile
     }
