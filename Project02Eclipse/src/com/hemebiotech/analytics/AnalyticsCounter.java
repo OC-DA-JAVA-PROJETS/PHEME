@@ -1,5 +1,7 @@
 package com.hemebiotech.analytics;
 
+import java.util.List;
+
 public class AnalyticsCounter {
 
     /*
@@ -13,26 +15,18 @@ public class AnalyticsCounter {
 	String out = args[1];
 
 	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
+	List<Symptom> data = reader.read(reader);
 	System.out.println(reader.GetSymptoms());
 
-	Counter counter = new SymptomsIterationCounter();
-	counter.count();
+	ICounter counter = new SymptomsIterationCounter();
+	List<SymptomRepeat> result1 = counter.count(data);
 
-	Sorter sorte = new AlphabeticSymptomsSorter();
-	sorter.sort();
+	ISorter sorter = new AlphabeticSymptomsSorter();
+	List<SymptomRepeat> result2 = sorter.sort(result1);
 
-	Writer writer = new SymptomsRepeatToFileWriter();
-	writer.write();
+	Writer writer = new SymptomsRepeatToFileWriter(out);
+	writer.write(result2);
 
     }
-    // FIXME 8 Externalisé vers la classe WriteSymptomDataToFile
-    // FIXME 9 : Externaliser le chemin du fichier via les arguments du programme.
 
-    // FileWriter writer = new FileWriter("result.out");
-    // FIXME 10 :Réglé par le FIXME 1.
-    // FIXME 12 : Réglé par le FIXME 1.
-//	writer.write("headache: " + headacheCount + "\n");
-//	writer.write("rash: " + rashCount + "\n");
-//	writer.write("dialated pupils: " + pupilCount + "\n");
-//	writer.close();
 }

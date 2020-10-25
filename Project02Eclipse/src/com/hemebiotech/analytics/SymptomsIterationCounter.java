@@ -9,6 +9,6 @@ package com.hemebiotech.analytics;
  * @author Eugene
  * @version 1.0
  */
-public class SymptomsIterationCounter implements Counter {
+public class SymptomsIterationCounter implements ICounter {
 
 }
