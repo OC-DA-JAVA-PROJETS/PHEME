@@ -10,5 +10,6 @@ package com.hemebiotech.analytics;
  * @version 1.0
  */
 public interface Writer {
+    void write();
 
 }

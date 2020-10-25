@@ -9,6 +9,6 @@ package com.hemebiotech.analytics;
  * @author Eugene
  * @version 1.0
  */
-public interface Sorter {
+public interface ICounter {
 
 }
