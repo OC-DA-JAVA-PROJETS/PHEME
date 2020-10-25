@@ -15,9 +15,17 @@ public class AnalyticsCounter {
 	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
 	System.out.println(reader.GetSymptoms());
 
-	// FIXME 8 Externalisé vers la classe WriteSymptomDataToFile
-    }
+	Counter counter = new SymptomsIterationCounter();
+	counter.count();
 
+	Sorter sorte = new AlphabeticSymptomsSorter();
+	sorter.sort();
+
+	Writer writer = new SymptomsRepeatToFileWriter();
+	writer.write();
+
+    }
+    // FIXME 8 Externalisé vers la classe WriteSymptomDataToFile
     // FIXME 9 : Externaliser le chemin du fichier via les arguments du programme.
 
     // FileWriter writer = new FileWriter("result.out");
