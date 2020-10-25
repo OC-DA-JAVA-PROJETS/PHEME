@@ -20,7 +20,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
      *                 one per line
      */
     public ReadSymptomDataFromFile(String filepath) {
+
 	this.filepath = filepath;
+
     }
 
     @Override
