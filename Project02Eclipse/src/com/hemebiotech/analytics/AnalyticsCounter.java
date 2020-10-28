@@ -1,32 +1,42 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
+
+import com.hemebiotech.analytics.utils.ISymptomCounter;
+import com.hemebiotech.analytics.utils.ISymptomReader;
+import com.hemebiotech.analytics.utils.ISymptomSorter;
+import com.hemebiotech.analytics.utils.ISymptomWriter;
+import com.hemebiotech.analytics.utils.impl.AlphabeticSymptomsSorter;
+import com.hemebiotech.analytics.utils.impl.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.utils.impl.SymptomsIterationCounter;
+import com.hemebiotech.analytics.utils.impl.SymptomsRepeatToFileWriter;
 
 public class AnalyticsCounter {
 
-    /*
-     * main program
-     * 
-     */
+	/*
+	 * main program
+	 * 
+	 */
 
-    public static void main(String args[]) throws Exception {
+	public static void main(String args[]) throws Exception {
 
-	String filePath = args[0];
-	String out = args[1];
+		String filePath = args[0];
+		String out = args[1];
 
-	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
-	List<Symptom> data = reader.read(reader);
-	System.out.println(reader.GetSymptoms());
+		ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
+		List<String> data = reader.GetSymptoms();
+		System.out.println(reader.GetSymptoms());
 
-	ICounter counter = new SymptomsIterationCounter();
-	List<SymptomRepeat> result1 = counter.count(data);
+		ISymptomCounter counter = new SymptomsIterationCounter();
+		Map<String, Long> result1 = counter.count(data);
 
-	ISorter sorter = new AlphabeticSymptomsSorter();
-	List<SymptomRepeat> result2 = sorter.sort(result1);
+		ISymptomSorter sorter = new AlphabeticSymptomsSorter();
+		Map<String, Long> result2 = sorter.sort(result1);
 
-	Writer writer = new SymptomsRepeatToFileWriter(out);
-	writer.write(result2);
+		ISymptomWriter writer = new SymptomsRepeatToFileWriter(out);
+		writer.write(result2);
 
-    }
+	}
 
 }
