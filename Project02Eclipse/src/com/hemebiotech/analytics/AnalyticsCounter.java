@@ -2,6 +2,11 @@ package com.hemebiotech.analytics;
 
 import java.util.List;
 
+import com.hemebiotech.analytics.utils.ISymptomReader;
+import com.hemebiotech.analytics.utils.IWriter;
+import com.hemebiotech.analytics.utils.impl.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.utils.impl.SymptomsRepeatToFileWriter;
+
 public class AnalyticsCounter {
 
     /*
@@ -15,17 +20,18 @@ public class AnalyticsCounter {
 	String out = args[1];
 
 	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
-	List<Symptom> data = reader.read(reader);
+	List<String> data = reader.GetSymptoms();
 	System.out.println(reader.GetSymptoms());
 
-	ICounter counter = new SymptomsIterationCounter();
-	List<SymptomRepeat> result1 = counter.count(data);
+//	ICounter counter = new SymptomsIterationCounter();
+//	List<SymptomRepeat> result1 = counter.count(data);
+//
+//	ISorter sorter = new AlphabeticSymptomsSorter();
+//	List<SymptomRepeat> result2 = sorter.sort(result1);
 
-	ISorter sorter = new AlphabeticSymptomsSorter();
-	List<SymptomRepeat> result2 = sorter.sort(result1);
-
-	Writer writer = new SymptomsRepeatToFileWriter(out);
-	writer.write(result2);
+	IWriter writer = new SymptomsRepeatToFileWriter(out);
+//	writer.write(result2);
+	writer.write(data);
 
     }
 

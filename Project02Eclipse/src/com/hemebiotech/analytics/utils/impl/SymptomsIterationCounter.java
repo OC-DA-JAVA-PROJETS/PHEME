@@ -1,7 +1,9 @@
 /**
  * 
  */
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.utils.impl;
+
+import com.hemebiotech.analytics.utils.ICounter;
 
 /**
  * TODO description

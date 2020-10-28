@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.utils;
 
 /**
  * TODO description

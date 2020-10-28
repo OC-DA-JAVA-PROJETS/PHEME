@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.utils;
 
 /**
  * TODO description
@@ -9,6 +9,6 @@ package com.hemebiotech.analytics;
  * @author Eugene
  * @version 1.0
  */
-public interface Writer {
+public interface ISorter {
 
 }
