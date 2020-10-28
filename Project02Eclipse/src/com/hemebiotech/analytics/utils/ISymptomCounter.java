@@ -9,6 +9,6 @@ package com.hemebiotech.analytics.utils;
  * @author Eugene
  * @version 1.0
  */
-public interface ISorter {
+public interface ISymptomCounter {
 
 }

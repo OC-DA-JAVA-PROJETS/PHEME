@@ -12,7 +12,7 @@ import java.util.List;
  * @author Eugene
  * @version 1.0
  */
-public interface IWriter {
+public interface ISymptomWriter {
 
 	void write(List<String> data) throws IOException;
 

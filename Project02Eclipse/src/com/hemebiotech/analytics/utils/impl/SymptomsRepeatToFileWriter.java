@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import com.hemebiotech.analytics.utils.IWriter;
+import com.hemebiotech.analytics.utils.ISymptomWriter;
 
 /**
  * TODO description
@@ -15,7 +15,7 @@ import com.hemebiotech.analytics.utils.IWriter;
  * @author Eugene
  * @version 1.0
  */
-public class SymptomsRepeatToFileWriter implements IWriter {
+public class SymptomsRepeatToFileWriter implements ISymptomWriter {
 	
 	String fileName;
 
@@ -32,6 +32,14 @@ public class SymptomsRepeatToFileWriter implements IWriter {
 //		FileWriter writer = new FileWriter(out);
 		FileWriter writer = new FileWriter("result.out");
 		// TODO la phase d'écriture
+		
+		for (String item : data) {
+			
+			writer.append(item);
+			writer.append('\n');
+			
+			
+		}
 		writer.close();
 	}
 

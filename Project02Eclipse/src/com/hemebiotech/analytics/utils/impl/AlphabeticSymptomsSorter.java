@@ -3,7 +3,7 @@
  */
 package com.hemebiotech.analytics.utils.impl;
 
-import com.hemebiotech.analytics.utils.ISorter;
+import com.hemebiotech.analytics.utils.ISymptomSorter;
 
 /**
  * TODO description
@@ -11,6 +11,6 @@ import com.hemebiotech.analytics.utils.ISorter;
  * @author Eugene
  * @version 1.0
  */
-public class AlphabeticSymptomsSorter implements ISorter {
+public class AlphabeticSymptomsSorter implements ISymptomSorter {
 
 }

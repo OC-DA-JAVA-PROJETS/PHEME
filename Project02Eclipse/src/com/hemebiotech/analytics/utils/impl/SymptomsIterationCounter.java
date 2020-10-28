@@ -3,7 +3,7 @@
  */
 package com.hemebiotech.analytics.utils.impl;
 
-import com.hemebiotech.analytics.utils.ICounter;
+import com.hemebiotech.analytics.utils.ISymptomCounter;
 
 /**
  * TODO description
@@ -11,6 +11,6 @@ import com.hemebiotech.analytics.utils.ICounter;
  * @author Eugene
  * @version 1.0
  */
-public class SymptomsIterationCounter implements ICounter {
+public class SymptomsIterationCounter implements ISymptomCounter {
 
 }
