@@ -3,6 +3,8 @@
  */
 package com.hemebiotech.analytics.utils;
 
+import java.util.Map;
+
 /**
  * TODO description
  *
@@ -10,5 +12,7 @@ package com.hemebiotech.analytics.utils;
  * @version 1.0
  */
 public interface ISymptomSorter {
+
+	Map<String, Long> sort(Map<String, Long> result1);
 
 }

@@ -4,7 +4,7 @@
 package com.hemebiotech.analytics.utils;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 /**
  * TODO description
@@ -14,6 +14,6 @@ import java.util.List;
  */
 public interface ISymptomWriter {
 
-	void write(List<String> data) throws IOException;
+	void write(Map<String, Long> result2) throws IOException;
 
 }

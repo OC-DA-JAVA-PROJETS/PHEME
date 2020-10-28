@@ -5,7 +5,8 @@ package com.hemebiotech.analytics.utils.impl;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.hemebiotech.analytics.utils.ISymptomWriter;
 
@@ -28,17 +29,12 @@ public class SymptomsRepeatToFileWriter implements ISymptomWriter {
     }
 
 	@Override
-	public void write(List<String> data) throws IOException {
-//		FileWriter writer = new FileWriter(out);
-		FileWriter writer = new FileWriter("result.out");
-		// TODO la phase d'écriture
-		
-		for (String item : data) {
-			
-			writer.append(item);
-			writer.append('\n');
-			
-			
+	public void write(Map<String, Long> data) throws IOException {
+		FileWriter writer = new FileWriter(fileName);
+		for (Entry<String, Long> item : data.entrySet()) {
+			String line = item.getKey() + ": " + item.getValue();
+			writer.append(line);
+			writer.append('\n'); // retour de ligne
 		}
 		writer.close();
 	}
