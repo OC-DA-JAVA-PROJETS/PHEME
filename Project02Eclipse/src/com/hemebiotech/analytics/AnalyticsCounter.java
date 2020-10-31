@@ -14,29 +14,26 @@ import com.hemebiotech.analytics.utils.impl.SymptomsRepeatToFileWriter;
 
 public class AnalyticsCounter {
 
-	/*
-	 * main program
-	 * 
-	 */
+    /*
+     * main program
+     * 
+     */
 
-	public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws Exception {
 
-		String filePath = args[0];
-		String out = args[1];
+	String filePath = args[0];
+	String out = args[1];
 
-		ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
-		List<String> data = reader.GetSymptoms();
-		System.out.println(reader.GetSymptoms());
+	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
+	ISymptomCounter counter = new SymptomsIterationCounter();
+	ISymptomSorter sorter = new AlphabeticSymptomsSorter();
+	ISymptomWriter writer = new SymptomsRepeatToFileWriter(out);
 
-		ISymptomCounter counter = new SymptomsIterationCounter();
-		Map<String, Long> result1 = counter.count(data);
+	List<String> data = reader.GetSymptoms();
+	Map<String, Long> result1 = counter.count(data);
+	Map<String, Long> result2 = sorter.sort(result1);
+	writer.write(result2);
 
-		ISymptomSorter sorter = new AlphabeticSymptomsSorter();
-		Map<String, Long> result2 = sorter.sort(result1);
-
-		ISymptomWriter writer = new SymptomsRepeatToFileWriter(out);
-		writer.write(result2);
-
-	}
+    }
 
 }

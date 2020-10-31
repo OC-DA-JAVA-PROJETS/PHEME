@@ -43,5 +43,5 @@ java AnalyticsCounter symptoms.txt
 * FIXME19 : Correction faute de frappe.
 
 
-### Préparer une V1 du programme corrigé
-**TODO**
+### V1.0
+Livrée
