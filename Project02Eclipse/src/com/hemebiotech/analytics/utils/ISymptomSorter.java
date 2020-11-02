@@ -9,6 +9,6 @@ import java.util.Map;
  */
 public interface ISymptomSorter {
 
-    Map<String, Long> sort(Map<String, Long> result1);
+    Map<String, Long> sort(Map<String, Long> data);
 
 }
