@@ -7,7 +7,7 @@ import com.hemebiotech.analytics.utils.ISymptomCounter;
 import com.hemebiotech.analytics.utils.ISymptomReader;
 import com.hemebiotech.analytics.utils.ISymptomSorter;
 import com.hemebiotech.analytics.utils.ISymptomWriter;
-import com.hemebiotech.analytics.utils.impl.AlphabeticSymptomsSorterV2;
+import com.hemebiotech.analytics.utils.impl.AlphabeticSymptomsSorter;
 import com.hemebiotech.analytics.utils.impl.ReadSymptomDataFromFile;
 import com.hemebiotech.analytics.utils.impl.SymptomsIterationCounter;
 import com.hemebiotech.analytics.utils.impl.SymptomsRepeatToFileWriter;
@@ -26,7 +26,7 @@ public class AnalyticsCounter {
 
 	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
 	ISymptomCounter counter = new SymptomsIterationCounter();
-	ISymptomSorter sorter = new AlphabeticSymptomsSorterV2();
+	ISymptomSorter sorter = new AlphabeticSymptomsSorter();
 	ISymptomWriter writer = new SymptomsRepeatToFileWriter(out);
 
 	List<String> data = reader.GetSymptoms();
