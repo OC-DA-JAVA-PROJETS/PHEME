@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -21,8 +22,13 @@ public class AnalyticsCounter {
 
     public static void main(String args[]) throws Exception {
 
-	String filePath = args[0];
-	String out = args[1];
+	AnalyticsCounter processor = new AnalyticsCounter();
+
+	processor.process(args[0], args[1]);
+
+    }
+
+    public void process(String filePath, String out) throws IOException {
 
 	ISymptomReader reader = new ReadSymptomDataFromFile(filePath);
 	ISymptomCounter counter = new SymptomsIterationCounter();
