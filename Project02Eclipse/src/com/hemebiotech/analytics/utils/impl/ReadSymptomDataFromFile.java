@@ -9,43 +9,42 @@ import java.util.List;
 import com.hemebiotech.analytics.utils.ISymptomReader;
 
 /**
- * Simple brute force implementation
- *
+ * Reader program used to input source file containing a list of symptoms and
+ * their repetition.
+ * 
+ * @author Eugene J.
+ * @version 1.0
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-    private String filepath;
+    /** path of file to read **/
+    private String filePath;
 
     /**
+     * Init a reader with a specific destination path.
      * 
-     * @param filepath a full or partial path to file with symptom strings in it,
-     *                 one per line
+     * @param filePath path of file to read.
      */
-    public ReadSymptomDataFromFile(String filepath) {
+    public ReadSymptomDataFromFile(String filePath) {
 
-	this.filepath = filepath;
-
+	this.filePath = filePath;
     }
 
+    /** {@inheritDoc} **/
     @Override
-    public List<String> GetSymptoms() {
+    public List<String> read() throws IOException {
 	List<String> result = new ArrayList<String>();
 
-	if (filepath != null) {
-	    try {
-		BufferedReader reader = new BufferedReader(new FileReader(filepath));
-		String line = reader.readLine();
-
-		while (line != null) {
-		    result.add(line);
-		    line = reader.readLine();
-		}
-		reader.close();
-	    } catch (IOException e) {
-		e.printStackTrace();
+	if (filePath != null) {
+	    BufferedReader reader = new BufferedReader(new FileReader(filePath));
+	    String line = reader.readLine();
+	    while (line != null) {
+		result.add(line);
+		line = reader.readLine();
 	    }
-	}
+	    reader.close();
 
+	}
 	return result;
     }
 
