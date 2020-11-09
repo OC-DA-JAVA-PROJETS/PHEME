@@ -8,13 +8,13 @@ import com.hemebiotech.analytics.utils.ISymptomSorter;
 
 /**
  * Alphabetic program sort the map of sequence iteration from
- * {@link SymptomsIterationCounter} into à treemap of keys and values in
+ * {@link SymptomsNameCounter} into à treemap of keys and values in
  * alphabetical order.
  * 
  * @author Eugene J.
  * @version 1.0
  */
-public class AlphabeticSymptomsSorter implements ISymptomSorter {
+public class SymptomsAlphabeticSorter implements ISymptomSorter {
 
     /** {@inheritDoc} **/
     @Override
