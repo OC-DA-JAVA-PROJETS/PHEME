@@ -15,7 +15,7 @@ import com.hemebiotech.analytics.utils.ISymptomReader;
  * @author Eugene J.
  * @version 1.0
  */
-public class ReadSymptomDataFromFile implements ISymptomReader {
+public class SymptomDataFromFileReader implements ISymptomReader {
 
     /** path of file to read **/
     private String filePath;
@@ -25,7 +25,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
      * 
      * @param filePath path of file to read.
      */
-    public ReadSymptomDataFromFile(String filePath) {
+    public SymptomDataFromFileReader(String filePath) {
 
 	this.filePath = filePath;
     }

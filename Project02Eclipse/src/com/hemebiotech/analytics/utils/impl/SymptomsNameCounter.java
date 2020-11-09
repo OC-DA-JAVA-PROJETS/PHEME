@@ -8,13 +8,13 @@ import com.hemebiotech.analytics.utils.ISymptomCounter;
 
 /**
  * Counter program sort the sequence itération from
- * {@link ReadSymptomDataFromFile} file source and stock the result into a
+ * {@link SymptomDataFromFileReader} file source and stock the result into a
  * hasmap.
  * 
  * @author Eugene J.
  * @version 1.0
  */
-public class SymptomsIterationCounter implements ISymptomCounter {
+public class SymptomsNameCounter implements ISymptomCounter {
 
     /**
      * Count the quantity of each symptom and stock the result into a map.
