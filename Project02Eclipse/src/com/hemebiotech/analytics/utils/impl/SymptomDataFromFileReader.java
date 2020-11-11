@@ -33,17 +33,18 @@ public class SymptomDataFromFileReader implements ISymptomReader {
     /** {@inheritDoc} **/
     @Override
     public List<String> read() throws IOException {
-	List<String> result = new ArrayList<String>();
+	List<String> result = new ArrayList<>();
 
 	if (filePath != null) {
-	    BufferedReader reader = new BufferedReader(new FileReader(filePath));
-	    String line = reader.readLine();
-	    while (line != null) {
-		result.add(line);
-		line = reader.readLine();
-	    }
-	    reader.close();
+	    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+		String line = reader.readLine();
+		while (line != null) {
+		    result.add(line);
+		    line = reader.readLine();
+		}
+		reader.close();
 
+	    }
 	}
 	return result;
     }

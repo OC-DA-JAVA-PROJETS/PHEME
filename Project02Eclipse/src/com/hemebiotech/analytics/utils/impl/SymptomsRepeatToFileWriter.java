@@ -9,7 +9,7 @@ import com.hemebiotech.analytics.utils.ISymptomWriter;
 
 /**
  * Writer program receive the final sequence of treatment
- * from{@linkAlphabeticSymptomsSorter} a treemap and write this result in
+ * from{@link SymptomsAlphabeticSorter} a treemap and write this result in
  * destination file.
  * 
  * @author Eugene J.
@@ -32,13 +32,14 @@ public class SymptomsRepeatToFileWriter implements ISymptomWriter {
     /** {@inheritDoc} **/
     @Override
     public void write(Map<String, Long> data) throws IOException {
-	FileWriter writer = new FileWriter(fileName);
-	for (Entry<String, Long> item : data.entrySet()) {
-	    String line = item.getKey() + ": " + item.getValue();
-	    writer.append(line);
-	    writer.append('\n');
+	try (FileWriter writer = new FileWriter(fileName)) {
+	    for (Entry<String, Long> item : data.entrySet()) {
+		String line = item.getKey() + ": " + item.getValue();
+		writer.append(line);
+		writer.append('\n');
+	    }
+	    writer.close();
 	}
-	writer.close();
     }
 
 }

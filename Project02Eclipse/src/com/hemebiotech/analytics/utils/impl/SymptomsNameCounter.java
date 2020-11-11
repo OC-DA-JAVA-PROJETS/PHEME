@@ -27,7 +27,7 @@ public class SymptomsNameCounter implements ISymptomCounter {
 	result = new HashMap<>();
 	for (String item : data) {
 	    Boolean alreadyExist = result.containsKey(item);
-	    if (alreadyExist) {
+	    if (Boolean.TRUE.equals(alreadyExist)) {
 		result.put(item, result.get(item) + 1);
 	    } else {
 		result.put(item, 1L);

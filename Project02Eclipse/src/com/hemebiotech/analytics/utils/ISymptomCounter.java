@@ -16,6 +16,8 @@ public interface ISymptomCounter {
     /**
      * counts the number of repetitions of a symptom contained in a list.
      * 
+     * @param data Returns the number of elements in this list.
+     * @return count Returns the number of key-value mappings in this map.
      */
     Map<String, Long> count(List<String> data);
 

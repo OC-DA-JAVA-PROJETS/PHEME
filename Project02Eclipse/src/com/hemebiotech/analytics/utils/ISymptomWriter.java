@@ -15,9 +15,9 @@ public interface ISymptomWriter {
 
     /**
      * 
-     * @param result2 is the final destination of the sorted map.
+     * @param symptomsSorted is the final destination of the sorted map.
      * @throws IOException in case of write error
      */
-    void write(Map<String, Long> result2) throws IOException;
+    void write(Map<String, Long> symptomsSorted) throws IOException;
 
 }

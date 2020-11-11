@@ -23,63 +23,68 @@ import com.hemebiotech.analytics.utils.impl.SymptomsRepeatToFileWriter;
  */
 public class AnalyticsCounter {
 
-    /**
-     * Field of parameters
-     * 
-     */
+    /** processing reader **/
     private ISymptomReader reader;
+    /** processing counter **/
     private ISymptomCounter counter;
+    /** processing sorter **/
     private ISymptomSorter sorter;
+    /** processing writer **/
     private ISymptomWriter writer;
 
     /**
      * 
-     * Constructor
+     * Constructor of {@link AnalyticsCounter}.<br>
+     * This constructor allows to specify reader, counter, sorter writer to be used
+     * by the generated object.
      * 
-     * @param reader
-     * @param counter
-     * @param sorter
-     * @param writer
+     * @param reader  reader à utiliser
+     * @param counter counter à utiliser
+     * @param sorter  sorter à utiliser
+     * @param writer  writer à utiliser
      */
-    public AnalyticsCounter(ISymptomReader reader, ISymptomCounter counter, ISymptomSorter sorter,
-	    ISymptomWriter writer) {
-
+    public AnalyticsCounter(
+	    ISymptomReader reader, ISymptomCounter counter, ISymptomSorter sorter, ISymptomWriter writer
+    ) {
 	this.reader = reader;
 	this.counter = counter;
 	this.sorter = sorter;
 	this.writer = writer;
-
     }
 
     /**
      * Method used to launch analytics counter process
      * 
-     * @param sourceFile      path of source file
-     * @param destinationFile path of destination file
      * @throws IOException thrown by a read or write error on source or destination
      *                     file
      */
     public void process() throws IOException {
-
-	List<String> data = reader.read();
-	Map<String, Long> result1 = counter.count(data);
-	Map<String, Long> result2 = sorter.sort(result1);
-	writer.write(result2);
+	List<String> symptoms;
+	symptoms = reader.read();
+	Map<String, Long> symptomsCounted = counter.count(symptoms);
+	Map<String, Long> symptomsCountedAndSorted = sorter.sort(symptomsCounted);
+	writer.write(symptomsCountedAndSorted);
     }
 
     /**
      * Launcher of {@link AnalyticsCounter}.
      * 
-     * @param args
-     * @throws Exception
+     * @param args is inecjtion of datas and destination of result
      */
-    public static void main(String args[]) throws Exception {
+    public static void main(String args[]) {
 	ISymptomReader reader = new SymptomDataFromFileReader(args[0]);
 	ISymptomCounter counter = new SymptomsNameCounter();
 	ISymptomSorter sorter = new SymptomsAlphabeticSorter();
 	ISymptomWriter writer = new SymptomsRepeatToFileWriter(args[1]);
 	AnalyticsCounter processor = new AnalyticsCounter(reader, counter, sorter, writer);
-	processor.process();
+	try {
+	    processor.process();
+	} catch (IOException e) {
+	    System.err.println("Error in read or write");
+	    e.printStackTrace();
+	    System.exit(1);
+	}
+	System.exit(0);
     }
 
 }

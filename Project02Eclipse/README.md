@@ -10,20 +10,23 @@ java AnalyticsCounter symptoms.txt
 
 ### Lists of issues
 
-* FIXME1 : il y a 3 compteurs spécifiques pour 3 symptomes hors la liste des symptomes n'est pas fixes.	
-* FIXME2 : le chemin du fichier n'est pas paramétrable. Ceci pose un problème de flexibilité.	
+* FIXME1 : Il y a 3 compteurs spécifiques pour 3 symptomes hors la liste des symptomes n'est pas fixes.	
+* FIXME2 : Le chemin du fichier n'est pas paramétrable. Ceci pose un problème de flexibilité.	
 * FIXME3 : Le compteur i ne sert à rien. Pas utiliser après dans la boucle.	
-* FIXME4 : déclaration d'une variable en doublon pour le même symptome créé en paramètre de classe.	
-* FIXME5 : sysout inutile de l'afficher dans la boucle.
-* FIXME6 : même problème que le 1.
-* FIXME7 : traiment globale de la boucle qui pourrait être gérée par une méthode.
-* FIXME8 : traitement global de l'ecriture qui peut être traité pa rune méthode.	
-* FIXME9 : le chemin du fichier n'est pas paramétrable. Ceci pose un problème de flexibilité.
-* FIXME10 : meme problème que le 1 conditionné sur 3 symptomes.	
-* FIXME11 : pas de fermeture du reader.
-* FIXME12 : problème lié au fixme4 et confusion sur headcount.
-* FIXME13 : même problème que sur le 4
-* FIXME19 : Faute de frappe
+* FIXME4 : Déclaration d'une variable en doublon pour le même symptome créé en paramètre de classe.	
+* FIXME5 : Sysout inutile de l'afficher dans la boucle.
+* FIXME6 : Même problème que le 1.
+* FIXME7 : Traiment globale de la boucle qui pourrait être gérée par une méthode.
+* FIXME8 : Traitement global de l'ecriture qui peut être traité pa rune méthode.	
+* FIXME9 : Le chemin du fichier n'est pas paramétrable. Ceci pose un problème de flexibilité.
+* FIXME10 : Meme problème que le 1 conditionné sur 3 symptomes.	
+* FIXME11 : Pas de fermeture du reader.
+* FIXME12 : Problème lié au fixme4 et confusion sur headcount.
+* FIXME13 : Même problème que sur le 4.
+* FIXME14 : Mise à jour de la Javadoc.
+* FIXME15 : Modifications du nom des interfaces.
+* FIXME16 : Omptimisation du nom des implémentations.
+* FIXME17 : Ouverture du paramétrage de la classe AnalyticsCounter.
 
 ### Expliquer quelles solutions pourraient être apportées : 
 
@@ -40,7 +43,9 @@ java AnalyticsCounter symptoms.txt
 * FIXME11 : Fermeture du reader.
 * FIXME12 : Réglé par le FIXME 1.
 * FIXME13 : Réglé par le FIXME 1.
-* FIXME19 : Correction faute de frappe.
+* FIXME15 : Amélioration de la compréhension de l'utilisation des interfaces.
+* FIXME16 : Amélioration de la compréhension de l'utilisation des implémentations.
+* FIXME17 : Possibilité d'externalisation de la classe.
 
 
 ### V1.0

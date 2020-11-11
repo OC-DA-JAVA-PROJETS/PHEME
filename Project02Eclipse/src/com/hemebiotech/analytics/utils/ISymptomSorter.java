@@ -14,6 +14,9 @@ public interface ISymptomSorter {
     /**
      * 
      * Sort map in entry.
+     *
+     * @param data sort alphabetically
+     * @return Returns the number of key-value mappings in this map.
      */
     Map<String, Long> sort(Map<String, Long> data);
 
