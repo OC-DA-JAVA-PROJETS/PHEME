@@ -42,7 +42,6 @@ public class SymptomDataFromFileReader implements ISymptomReader {
 		    result.add(line);
 		    line = reader.readLine();
 		}
-		reader.close();
 
 	    }
 	}

@@ -38,7 +38,6 @@ public class SymptomsRepeatToFileWriter implements ISymptomWriter {
 		writer.append(line);
 		writer.append('\n');
 	    }
-	    writer.close();
 	}
     }
 
