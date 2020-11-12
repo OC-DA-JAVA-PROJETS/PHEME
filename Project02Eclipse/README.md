@@ -17,7 +17,7 @@ java AnalyticsCounter symptoms.txt
 * FIXME5 : Sysout inutile de l'afficher dans la boucle.
 * FIXME6 : Même problème que le 1.
 * FIXME7 : Traiment globale de la boucle qui pourrait être gérée par une méthode.
-* FIXME8 : Traitement global de l'ecriture qui peut être traité pa rune méthode.	
+* FIXME8 : Traitement global de l'ecriture qui peut être traité par une méthode.	
 * FIXME9 : Le chemin du fichier n'est pas paramétrable. Ceci pose un problème de flexibilité.
 * FIXME10 : Meme problème que le 1 conditionné sur 3 symptomes.	
 * FIXME11 : Pas de fermeture du reader.

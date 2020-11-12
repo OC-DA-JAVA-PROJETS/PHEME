@@ -24,6 +24,7 @@ public class SymptomsRepeatToFileWriter implements ISymptomWriter {
      * Init a writer with a specific destination path.
      * 
      * @param fileName path of file to write.
+     * 
      */
     public SymptomsRepeatToFileWriter(String fileName) {
 	this.fileName = fileName;
